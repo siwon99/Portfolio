@@ -441,3 +441,34 @@ p {
 .testimonial__speech-bubble a {
   color: #78A9ED;
 }
+
+/* Contact */
+#contact {
+  background-color: #A0D1F7;
+  padding: 20px;
+}
+
+.contact__title,
+.contact__email,
+.contact__rights {
+  color: #fff;
+}
+
+.contact__title {
+  margin: 32px 0;
+}
+
+.contact__links {
+  font-size: 40px;
+  margin: 24px 0;
+  letter-spacing: 10px;
+}
+
+.contact__links i {
+  transition: all var(--animation-duration) ease in;
+}
+
+.contact__links i:hover {
+  color: #FFA2AD;
+  transform:  scale(1.3);
+}
