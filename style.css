@@ -156,6 +156,9 @@ p {
 .section {
   text-align: center;
   padding: 50px;
+  margin: auto;
+}
+.section__container {
   max-width: 1200px;
   margin: auto;
 }
@@ -220,4 +223,65 @@ p {
 
 .school__period {
   font-size: var(--font-micro);
+}
+
+/* Skill */
+#skills {
+  background-color: #E8F5FF;
+}
+
+.skillset {
+  display: flex;
+  color: white;
+  margin: 20x 0;
+}
+
+.skillset__title {
+  color: #fff;
+}
+
+.skillset__left {
+  flex-basis: 60%;
+  background-color: #98b5e3;
+  padding: 20px 40px;
+}
+
+.skill {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  margin-top: 10px;
+  background-color: #d2d2d2;
+}
+
+.skill__value {
+  height: 3px;
+  background-color: #FF5675;
+}
+
+.skillset__right {
+  flex-basis: 40%;
+  background-color: #87a4c2;
+}
+
+.tools {
+  background-color: #6684b3;
+  padding: 30px;
+}
+
+.tools .etc {
+  padding: 20px;
+}
+
+.etc {
+  padding-top: 30px;
 }
