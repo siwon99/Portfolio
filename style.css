@@ -148,7 +148,7 @@ p {
 }
 
 .home__contact:hover {
-  background-color: #F9FFFF;
+  background-color: #fff;
   border-radius: var(--size-border-radius);
 }
 
@@ -348,8 +348,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 400px;
-  height: 300px;
+  width: 280px;
+  height: 230px;
   margin: 2px;
   background-color: #EBF5FF;
 }
