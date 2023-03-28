@@ -24,8 +24,8 @@ navbarMenu.addEventListener('click', (event) => {
 });
 
 //contact 버튼 클릭시 넘어가기
-const btn = document.querySelector('.home__contact');
-btn.addEventListener('click', (event) => {
+const homebtn = document.querySelector('.home__contact');
+homebtn.addEventListener('click', (event) => {
   scrollIntoView('#contact');
 });
 
@@ -41,4 +41,18 @@ const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
   //스크롤 높이가 home높이를 나눈 값을 1에서 뺐을 때 1 = 800(불투명), 0.5 = 400(반투명), 0 = 0(투명)
   home.style.opacity = 1 - window.scrollY / homeHeight;
+});
+
+//arrow-up 버튼 만들기
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowUp.classList.add('visible');
+  } else {
+    arrowUp.classList.remove('visible');
+  }
+});
+
+arrowUp.addEventListener('click', (event) => {
+  scrollIntoView('#home');
 });
