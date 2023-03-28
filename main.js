@@ -4,8 +4,7 @@
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
-  console.log(`window.scrollY= ${window.scrollY}` );
-  console.log(window.scrollX);
+  // console.log(`window.scrollY= ${window.scrollY}`);
   if(window.scrollY > navbarHeight) {
     navbar.classList.add(`navbar--dark`);
   } else {
@@ -35,3 +34,11 @@ function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({behavior: "smooth"});
 }
+
+//home파트 스크롤을 내릴 때 배경빼고 점점 투명하게 만들기
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+  //스크롤 높이가 home높이를 나눈 값을 1에서 뺐을 때 1 = 800(불투명), 0.5 = 400(반투명), 0 = 0(투명)
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+});
