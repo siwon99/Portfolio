@@ -56,3 +56,30 @@ document.addEventListener('scroll', () => {
 arrowUp.addEventListener('click', (event) => {
   scrollIntoView('#home');
 });
+
+//프로젝트 버튼 클릭시 필터링하기
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+
+workBtnContainer.addEventListener('click', (e) => {
+  //filter의 dataset값을 가져오지 못한다면 parentNode의 dataset값을 불러온다.
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+  if(filter == null) {
+    return;
+  } 
+  projectContainer.classList.add('anim-out');
+  //anim-out을 통해 투명도가 0인 프로젝트들을 0.3초후에 다시 투명도가 1로 돌아올 수 있도록 사용
+  setTimeout(() => {
+    //forEach = for (let project of projects) {...} / for(let i=0; )
+    projects.forEach((project) => {
+    //전체 혹은 dataset 타입과 같은 filter를 선택하면 '안보여지는'크래스를 삭제, 선택하지 않으면 '안보여지는'클래스 추가
+      if (filter === '*' || filter === project.dataset.type) {
+        project.classList.remove('invisible');
+      } else {
+        project.classList.add('invisible');
+      }
+    });
+    projectContainer.classList.remove('anim-out'); //->블럭안 코드가 0.3초 이후에 호출됨
+  }, 300);
+});
