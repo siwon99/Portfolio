@@ -20,7 +20,14 @@ navbarMenu.addEventListener('click', (event) => {
   if (link == null) {
     return;
   } 
+  navbarMenu.classList.remove('open');
   scrollIntoView(link);
+});
+
+//토글버튼
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+  navbarMenu.classList.toggle('open');
 });
 
 //contact 버튼 클릭시 넘어가기
@@ -70,7 +77,7 @@ workBtnContainer.addEventListener('click', (e) => {
   } 
 
   //이전에 눌린 버튼 제외 현재 버튼에 불들어오기
-  const active = document.querySelector('.category__btn.selected')
+  const active = document.querySelector('.category__btn.selected');
   active.classList.remove('selected');
   const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
   target.classList.add('selected');
