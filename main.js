@@ -68,6 +68,13 @@ workBtnContainer.addEventListener('click', (e) => {
   if(filter == null) {
     return;
   } 
+
+  //이전에 눌린 버튼 제외 현재 버튼에 불들어오기
+  const active = document.querySelector('.category__btn.selected')
+  active.classList.remove('selected');
+  const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+  target.classList.add('selected');
+
   projectContainer.classList.add('anim-out');
   //anim-out을 통해 투명도가 0인 프로젝트들을 0.3초후에 다시 투명도가 1로 돌아올 수 있도록 사용
   setTimeout(() => {
