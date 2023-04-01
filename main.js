@@ -36,12 +36,6 @@ homebtn.addEventListener('click', (event) => {
   scrollIntoView('#contact');
 });
 
-//scrollIntoView함수를 통해 selector자리에 해당값을 받아와서 이벤트처리
-function scrollIntoView(selector) {
-  const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({behavior: "smooth"});
-}
-
 //home파트 스크롤을 내릴 때 배경빼고 점점 투명하게 만들기
 const home = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
@@ -96,4 +90,69 @@ workBtnContainer.addEventListener('click', (e) => {
     });
     projectContainer.classList.remove('anim-out'); //->블럭안 코드가 0.3초 이후에 호출됨
   }, 300);
+});
+
+//스크롤시 각 섹션에 활성화되기
+//1. 모든 섹션 요소들과 메뉴아이템들을 가지고 온다.
+//2. IntersectionObserver를 이용해서 모든 섹션들을 관찰한다.
+//3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다.
+
+//sectionIds를 빙글빙글 돌면서(map) 각각의 id문자열을 document.querySelector을 이용하서 해당하는 요소 받아오기
+const sectionIds = ['#home', '#about', '#skills', '#work', '#testimonials', '#contact'];
+const sections = sectionIds.map((id) => document.querySelector(id));
+const navItems = sectionIds.map((id) => document.querySelector(`[data-link="${id}"]`));
+
+let selectedNavIndex = 0;
+let selectedNavItem = navItems[0];
+function selectNavItem(selected) {
+  selectedNavItem.classList.remove('active');
+  selectedNavItem = selected;
+  selectedNavItem.classList.add('active');
+}
+
+//scrollIntoView함수를 통해 selector자리에 해당값을 받아와서 이벤트처리
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({behavior: "smooth"});
+  selectNavItem(navItems[sectionIds.indexOf(selector)]);
+}
+
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.3,
+}
+
+//entries를 빙글빙글 돌면서 우리가 원하는 일들을 함
+const observerCallback = (entries, observer) => {
+  entries.forEach(entry => {
+    //진입하지 않을 때 = 빠져나갈 때
+    if(!entry.isIntersecting) {
+      const index = sectionIds.indexOf(`#${entry.target.id}`);
+  
+      //스크롤링이 아래로 되어서 페이지가 올라옴
+      if(entry.boundingClientRect.y < 0) {
+        selectedNavIndex = index + 1;
+      } else { //페이지가 내려가는 경우
+        selectedNavIndex = index - 1;
+      }
+    }
+  });
+};
+
+//관찰자를 만듦
+//sections를 빙글빙글 돌면서 해당하는 section을 obsever에게 관찰해달라고 전달
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+sections.forEach(section => observer.observe(section));
+
+//스크롤링 할때마다 해당하는 메뉴 선택
+//'scroll'이벤트는 브라우저에서 모든 스크롤에 해당하는 이벤트가 발생할 때마다 생성되는 이벤트
+//'wheel'이벤트는 사용자가 스스로 스크롤링 할 때는 휠 이벤트 발생
+window.addEventListener('wheel', () => {
+  if(window.scrollY === 0) {
+    selectedNavIndex = 0;
+  } else if (Math.round(window.scrollY + window.innerHeight) >= document.body.clientHeight) {
+    selectedNavIndex = navItems.length - 1;
+  }
+  selectNavItem(navItems[selectedNavIndex]);
 });
