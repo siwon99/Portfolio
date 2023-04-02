@@ -152,7 +152,7 @@ p {
 
 /* Home */
 #home {
-  background: url("../img/home.png") center/cover no-repeat;
+  background: url("./img/home.png") center/cover no-repeat;
   padding: 40px;
   padding-top: 120px;
   text-align: center;
