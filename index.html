@@ -42,8 +42,8 @@
   <section id="home">
     <div class="home__container">
       <img width="310px"  height="380px" src="./img/portfolio_img.png" alt="시원 이미지" class="home__avatar">
-      <h1 class="home__title">Hello, <br/> I'm Siwon Kim</h1>
-      <h2 class="home__description">계속해서 성장하는 프론트엔드 개발자</h2>
+      <h1 class="home__title">I'm Siwon Kim</h1>
+      <h2 class="home__description">도전을 두려워하지 않으며, <br> 무한한 성장가능성을 가진 예비 프론트엔드 개발자</h2>
       <button class="home__contact">CONTACT ME</button>
     </div>
   </section>
@@ -70,7 +70,7 @@
         </div>
         <h2 class="major__title">Study</h2>
         <div class="major__description">
-          HTML, CSS, JavaScript,<br> React, Python, C, Java, Matlab
+          HTML, CSS, JavaScript, React, <br> Python, C, Java, Matlab
         </div>
       </div>
       <!-- 전공3 -->
@@ -104,8 +104,8 @@
       <div class="school">
         <img width="150px" height="45px" src="./img/school/sbs.png" alt="학원" class="school__logo3">
         <div class="school__description">
-          <p class="school__name">SBS 아카데미 컴퓨터아트 학원_웹사이트, 디자인, 포트폴리오 강의 수강</p>
-          <p class="school__period">2022.12 - 2023.10</p>
+          <p class="school__name">SBS 아카데미 컴퓨터아트 학원_웹사이트, 디자인, 언어 수강</p>
+          <p class="school__period">2022.12 - 2023.04</p>
         </div>
       </div>
     </div>
@@ -117,7 +117,7 @@
       <h1>Skills</h1>
       <h2>Skills & Attributes</h2>
       <p>
-        [skill에 관한 나의 장점]
+        현재 현업에서 많이 사용하는 언어부터 후에 알아두면 좋을 언어들까지 하나씩 배워가는 중입니다.
       </p>
       <div class="skillset">
         <div class="skillset__left">
@@ -187,46 +187,81 @@
   <!-- Work -->
   <section id="work" class="section">
   <div class="section__container">
-    <h1>My Work</h1>
-    <h3>Projects</h3>
+    <h1>My Projects</h1>
+    <h3>개발 공부하면서 만든 프로젝트로 사용한 언어와 간략한 설명</h3>
     <div class="work__categories">
       <button class="category__btn selected" data-filter="*">All<span class="category__count">8</span></button>
-      <button class="category__btn" data-filter="front-end">Front-end<span class="category__count">2</span></button>
-      <button class="category__btn" data-filter="student">Student<span class="category__count">6</span></button>
-      <button class="category__btn" data-filter="react">React<span class="category__count">0</span></button>
+      <button class="category__btn" data-filter="Web-Site">Web Site<span class="category__count">2</span></button>
+      <button class="category__btn" data-filter="game">Game<span class="category__count">3</span></button>
+      <button class="category__btn" data-filter="react">React<span class="category__count">1</span></button>
+      <button class="category__btn" data-filter="etc">Ect<span class="category__count">2</span></button>
     </div>
     <div class="work__projects">
-      <a href="https://github.com/siwon99?tab=repositories" class="project" target="blank" data-type="front-end">
+
+      <a href="https://github.com/siwon99/Disney-Plus-App-with-React" class="project" target="blank" data-type="react">
+        <img src="./img/projects/project_disney plus login.png" alt="크로켓 게임 홈페이지" class="project__img">
+        <div class="project__description">
+          <h3>Disney Plus 사이트 예제</h3>
+            <span>React를 사용하여<br> 로그인 페이지부터 영화 예고편과 <br> 간략한 설명 및 평점 페이지 만들기</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/siwon99/Starbucks" class="project" target="blank" data-type="Web-Site">
         <img src="./img/projects/project_starbucks.png" alt="스타벅스 홈페이지" class="project__img">
         <div class="project__description">
-          <h3>스타벅스 홈페이지 예제</h3>
-            <span>HTML과 CSS, JavaScript를<br> 이용한 사이트 만들기</span>
+          <h3>스타벅스 웹사이트 <br> (+로그인 페이지)</h3>
+            <span>HTML과 CSS, JavaScript를<br> 사용한 로그인 가능한 <br> 사이트 만들기</span>
         </div>
       </a>
 
-      <a href="https://github.com/siwon99?tab=repositories" class="project" target="blank" data-type="student">
-        <img src="./img/projects/project_overwatch.png" alt="오버워치 홈페이지" class="project__img">
+      <a href="https://github.com/siwon99/Apple-Web-Site" class="project" target="blank" data-type="Web-Site">
+        <img src="./img/projects/project_Apple Web.png" alt="크로켓 게임 홈페이지" class="project__img">
         <div class="project__description">
-          <h3>오버워치 캐릭터 선택 예제</h3>
-            <span>HTML과 CSS, JavaScript를<br> 이용한 사이트 만들기</span>
+          <h3>애플 웹 사이트 예제</h3>
+            <span>HTML과 CSS, JavaScript를<br> 사용하여 검색창과 장바구니, <br> 스크롤시 간략한 아이콘과 영상으로 <br>제품을 소개하는 페이지 만들기</span>
         </div>
       </a>
 
-      <a href="https://github.com/siwon99?tab=repositories" class="project" target="blank" data-type="react">
-        <img src="./img/projects/project_croket.png" alt="크로켓 게임 홈페이지" class="project__img">
+      <a href="https://github.com/siwon99/Find-the-Carrot" class="project" target="blank" data-type="game">
+        <img src="./img/projects/project_carrot game.png" alt="크로켓 게임 홈페이지" class="project__img">
         <div class="project__description">
-          <h3>크로켓 게임 예제</h3>
-            <span>HTML과 CSS, JavaScript를<br> 이용한 사이트 만들기</span>
+          <h3>당근 찾기 게임 예제</h3>
+            <span>HTML과 CSS, JavaScript를<br> 사용하여 폭탄과 벌레를 피해 <br> 제한시간 내 당근 찾는 게임 만들기</span>
         </div>
       </a>
-
-      <a href="https://github.com/siwon99?tab=repositories" class="project" target="blank" data-type="front-end">
+      
+      <a href="https://github.com/siwon99/Portfolio" class="project" target="blank" data-type="etc">
         <img src="./img/projects/project_portfolio.png" alt="포트폴리오" class="project__img">
         <div class="project__description">
           <h3>포트포리오 제작</h3>
-            <span>HTML과 CSS, JavaScript를<br> 이용한 사이트 만들기</span>
+            <span>HTML과 CSS, JavaScript를<br> 사용한 개발자 포트폴리오 만들기</span>
         </div>
       </a>
+
+      <a href="https://github.com/siwon99/OverWatch" class="project" target="blank" data-type="game">
+        <img src="./img/projects/project_overwatch.png" alt="오버워치 홈페이지" class="project__img">
+        <div class="project__description">
+          <h3>오버워치 캐릭터 선택 예제</h3>
+            <span>HTML과 CSS, JavaScript를<br> 사용한 캐릭터 선택 창 만들기</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/siwon99/Crocket-Game" class="project" target="blank" data-type="game">
+        <img src="./img/projects/project_croket.png" alt="크로켓 게임 홈페이지" class="project__img">
+        <div class="project__description">
+          <h3>크로켓 게임 예제</h3>
+            <span>HTML과 CSS, JavaScript를<br> 사용한 크로켓 게임소개 <br> 페이지 만들기</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/siwon99/To-Do-List" class="project" target="blank" data-type="etc">
+        <img src="./img/projects/project_To Do List.png" alt="크로켓 게임 홈페이지" class="project__img">
+        <div class="project__description">
+          <h3>To Do List 예제</h3>
+            <span>HTML과 CSS, JavaScript를<br> 사용한 오늘 할 일 목록 <br> 페이지 만들기</span>
+        </div>
+      </a>
+
     </div>
   </div>
   </section>
