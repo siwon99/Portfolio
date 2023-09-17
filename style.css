@@ -58,7 +58,7 @@ h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
   color: #000;
-  margin: 35px 0px 16px 0px;
+  margin: 50px 0px 16px 0px;
 }
 
 h2 {
@@ -195,6 +195,7 @@ p {
 .section__container {
   max-width: 1200px;
   margin: auto;
+  line-height: 200%;
 }
 
 /* About */
@@ -206,6 +207,10 @@ p {
 
 #about p {
   font-weight: var(--weight-semi-bold);
+}
+
+.major1 { 
+  width: 30%;
 }
 
 .major__icon {
@@ -275,11 +280,12 @@ p {
 .skillset {
   display: flex;
   color: white;
-  margin: 20x 0;
+  margin: 20px 0;
 }
 
 .skillset__title {
-  color: #fff;
+  color: white;
+  font-size: var(--font-medium);
 }
 
 .skillset__left {
@@ -390,7 +396,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 280px;
+  width: 300px;
   height: 230px;
   margin: 2px;
   background-color: #EBF5FF;
