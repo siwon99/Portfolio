@@ -190,7 +190,6 @@ p {
 .section {
   text-align: center;
   padding: 50px;
-  margin: auto;
 }
 .section__container {
   max-width: 1200px;
@@ -207,10 +206,12 @@ p {
 
 #about p {
   font-weight: var(--weight-semi-bold);
+  font-size: 17px;
 }
 
-.major1 { 
-  width: 30%;
+#about .front-end {
+  font-size: 15px;
+  font-weight: var(--weight-regular);
 }
 
 .major__icon {
