@@ -4,6 +4,7 @@
 
   /* Font size */
 --font-large: 48px;
+--font-small-large: 35px;
 --font-medium: 28px;
 --font-regular: 18px;
 --font-small: 16px;
@@ -168,6 +169,24 @@ p {
 .home__title,
 .home__description {
   color:#1f1f1f;
+}
+
+.text_box{
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+  text-align: center;
+  height: 180px;
+}
+
+.blink {
+  animation: blink 0.5s infinite;
+  font-size: var(--font-small-large);
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
 }
 
 .home__contact {

@@ -30,6 +30,27 @@ navbarToggleBtn.addEventListener('click', () => {
   navbarMenu.classList.toggle('open');
 });
 
+//타이핑 효과
+const content = "Hi. I'm Siwon Kim \n 도전을 두려워하지 않고, \n 신속한 변화에 대처하며 함께 성장할 \n 프론트엔드 개발자입니다.";
+const text = document.querySelector(".text");
+let i = 0;
+let intervalId;
+
+function typing() {
+    let txt = content[i++];
+    text.innerHTML += txt === "\n" ? "<br/>" : txt;
+    if (i >= content.length) {
+        clearInterval(intervalId);
+        setTimeout(() => {
+            text.textContent = "";
+            i = 0;
+            intervalId = setInterval(typing, 150);
+        }, 2500);
+    }
+}
+
+intervalId = setInterval(typing, 150);
+
 //contact 버튼 클릭시 넘어가기
 const homebtn = document.querySelector('.home__contact');
 homebtn.addEventListener('click', (event) => {
